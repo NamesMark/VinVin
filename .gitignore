@@ -1,0 +1,14 @@
+node_modules/
+package-lock.json
+*.log
+
+target/
+Cargo.lock
+**/*.rs.bk
+
+.env
+
+.vscode/
+
+.DS_Store
+Thumbs.db
