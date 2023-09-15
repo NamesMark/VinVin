@@ -1,4 +1,17 @@
 <!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
+<script lang = "ts">
+	//import type { WinePost } from '../types/types';
+	import Post from '../components/Post.svelte';
+	import PostInput from '../components/PostInput.svelte';
+
+	let posts: never[] = [];
+
+	fetch("/posts")
+		.then(res => res.json())
+		.then(data => {
+			posts = data;
+		});
+</script>
 
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-5">
@@ -11,5 +24,10 @@
 				<code class="code">/src/routes/+page.svelte</code> - this page, you can replace the contents
 			</li>
 		</ul>
+
+		{#each posts as post}
+			<Post post={post} />
+		{/each}
+
 	</div>
 </div>
