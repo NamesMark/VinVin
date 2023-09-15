@@ -4,6 +4,7 @@ diesel::table! {
     posts (id) {
         id -> Int4,
         user_id -> Nullable<Int4>,
+        created_at -> Timestamptz,
         wine_name -> Varchar,
         wine_year -> Nullable<Int4>,
         region -> Nullable<Varchar>,
